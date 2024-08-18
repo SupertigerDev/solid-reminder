@@ -1,0 +1,82 @@
+/* https://www.realtimecolors.com/?colors=0e1611-ebf5ef-007025-81da9e-23a950&fonts=Inter-Inter */
+
+:root {
+  --text-sm: 0.75rem;
+  --text-md: 1rem;
+  --text-xl: 1.25rem;
+  --text-xxl: 1.5rem;
+  --text-xxxl: 2rem;
+
+  --sp-sm: 0.5rem;
+  --sp-md: 0.75rem;
+  --sp-lg: 1rem;
+  --sp-xl: 1.5rem;
+  --sp-xxl: 2rem;
+  --sp-xxxl: 2.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: hsl(143, 22%, 7%);
+    --background: hsl(144, 33%, 94%);
+    --primary: hsl(140, 100%, 22%);
+    --secondary: hsl(140, 55%, 68%);
+    --accent: hsl(140, 66%, 40%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: hsl(143, 22%, 93%);
+    --background: hsl(144, 33%, 6%);
+    --primary: hsl(140, 100%, 78%);
+    --secondary: hsl(140, 55%, 32%);
+    --accent: hsl(140, 66%, 60%);
+  }
+}
+
+textarea {
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: var(--text);
+  background-color: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body,
+#root {
+  height: 100dvh;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: var(--text-xxl);
+}
+
+p {
+  margin: 0;
+}
