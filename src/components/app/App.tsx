@@ -67,21 +67,38 @@ const DateTime = (props: { date: Accessor<Date> }) => {
       <div class={style.time}>
         <div>
           <p>Hours</p>
-          <input value={hour()} placeholder="HH" accept="[0-9]*" />
+          <input
+            class={style.hour}
+            value={hour()}
+            placeholder="HH"
+            accept="[0-9]*"
+          />
         </div>
         <div>
           <p>Minutes</p>
-          <input value={minute()} placeholder="MM" accept="[0-9]*" />
+          <input
+            class={style.minute}
+            value={minute()}
+            placeholder="MM"
+            accept="[0-9]*"
+          />
         </div>
       </div>
       <div class={style.date}>
         <div>
           <p>Day</p>
-          <input value={day()} type="number" placeholder="DD" accept="[0-9]*" />
+          <input
+            class={style.day}
+            value={day()}
+            type="number"
+            placeholder="DD"
+            accept="[0-9]*"
+          />
         </div>
         <div>
           <p>Month</p>
           <input
+            class={style.month}
             value={month()}
             type="number"
             placeholder="MM"
@@ -91,6 +108,7 @@ const DateTime = (props: { date: Accessor<Date> }) => {
         <div>
           <p>Year</p>
           <input
+            class={style.year}
             value={year()}
             type="number"
             placeholder="YYYY"
@@ -143,9 +161,9 @@ function getPredictions(text: string) {
   // mm/dd/yyyy
   const date = /(\d{1,2})\/(\d{1,2})\/(\d{4})/i;
 
-  const inXMinutes = /(\d+) m(inute)?/i;
-  const inXHours = /(\d+) h(our)?/i;
-  const inXDays = /(\d+) d(ay)?/i;
+  const inXMinutes = /(\d+)( )?m(inute)?/i;
+  const inXHours = /(\d+)( )?h(our)?/i;
+  const inXDays = /(\d+)( )?d(ay)?/i;
 
   let list = [];
   const minutes = parseInt(inXMinutes.exec(text)?.[1] || "0");

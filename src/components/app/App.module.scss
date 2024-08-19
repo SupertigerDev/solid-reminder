@@ -70,17 +70,29 @@ textarea {
     }
     .date {
       max-width: 13rem;
+      .month {
+        border-radius: 0;
+      }
     }
+
     .time,
     .date {
       display: flex;
-      gap: var(--sp-sm);
+      gap: 1px;
       div {
         display: flex;
         flex: 1;
         flex-direction: column;
         text-align: center;
         gap: var(--sp-sm);
+        &:first-child input {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        &:last-child input {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
       }
     }
     p {
