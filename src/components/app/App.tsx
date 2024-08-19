@@ -49,6 +49,12 @@ export const App = () => {
           />
           <DateTime date={date()} />
         </BottomDrawer.Content>
+        <BottomDrawer.Footer>
+          <button data-normal onclick={() => newReminderDrawer()?.toggle()}>
+            Close
+          </button>
+          <button>Schedule</button>
+        </BottomDrawer.Footer>
       </BottomDrawer.Root>
     </CounterProvider>
   );
@@ -161,9 +167,9 @@ function getPredictions(text: string) {
   // mm/dd/yyyy
   const date = /(\d{1,2})\/(\d{1,2})\/(\d{4})/i;
 
-  const inXMinutes = /(\d+)( )?m(inute)?/i;
-  const inXHours = /(\d+)( )?h(our)?/i;
-  const inXDays = /(\d+)( )?d(ay)?/i;
+  const inXMinutes = /(\d+)( )?m((inute)|(in))?(s)?($|\s)/i;
+  const inXHours = /(\d+)( )?h(our)?(s)?($|\s)/i;
+  const inXDays = /(\d+)( )?d(ay)?(s)?($|\s)/i;
 
   let list = [];
   const minutes = parseInt(inXMinutes.exec(text)?.[1] || "0");
@@ -215,4 +221,12 @@ function getPredictions(text: string) {
     });
   }
   return list;
+}
+
+function matchGroup(regex: RegExp, text: string, groupIndex: number) {
+  const matches = Array.from(text.matchAll(regex)).map(
+    (match) => match[groupIndex]
+  );
+
+  return matches;
 }

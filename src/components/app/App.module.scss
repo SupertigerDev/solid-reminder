@@ -48,6 +48,8 @@ textarea {
   gap: var(--sp-md);
   .predictions {
     display: flex;
+    flex-wrap: wrap;
+
     gap: var(--sp-sm);
   }
 
@@ -126,6 +128,10 @@ textarea {
   }
   button {
     color: rgba(255, 255, 255, 1);
+    &[data-normal] {
+      color: black;
+      background-color: rgb(255, 255, 255);
+    }
   }
 
   input,
@@ -140,6 +146,10 @@ textarea {
   }
   button {
     color: rgba(0, 0, 0, 0.8);
+    &[data-normal] {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
   }
 
   input,

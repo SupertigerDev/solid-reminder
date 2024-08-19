@@ -16,8 +16,10 @@
   left: 0;
   display: flex;
   overflow: hidden;
+  overflow: auto;
   flex-direction: column;
   height: 60dvh;
+  padding-bottom: 10px;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   background-color: var(--background);
@@ -29,9 +31,23 @@
 .header {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   justify-content: center;
   height: 4rem;
   text-align: center;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: end;
+  gap: var(--sp-sm);
+  button {
+    padding: var(--sp-sm);
+  }
 }
 
 @keyframes fadeIn {

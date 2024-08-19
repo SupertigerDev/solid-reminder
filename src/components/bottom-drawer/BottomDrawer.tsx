@@ -53,7 +53,12 @@ const Content = (props: ContentProps) => {
   );
 };
 
-const Footer = () => {};
+interface FooterProps {
+  children?: JSXElement;
+}
+const Footer = (props: FooterProps) => {
+  return <div class={style.footer}>{props.children}</div>;
+};
 
 export const BottomDrawer = {
   Root,
