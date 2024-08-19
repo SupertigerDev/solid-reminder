@@ -1,5 +1,5 @@
 import style from "./App.module.scss";
-import { createSignal, Accessor, onMount, For, createEffect } from "solid-js";
+import { createSignal, Accessor, For, createEffect } from "solid-js";
 import { BottomDrawer, BottomDrawerRef } from "../bottom-drawer";
 import { createContextProvider } from "@solid-primitives/context";
 import { RandomReminderNotePlaceholder } from "../../common/randomFunnyPlaceholder";
